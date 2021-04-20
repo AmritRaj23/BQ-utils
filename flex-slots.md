@@ -1,4 +1,7 @@
-Comparing projects: admin, reservations, on demand
+For the setup below, I am using 3 projects: 
+* A BQ Admin project which is used for creating commitments (flex slot), reservations and assignments
+* A project 'a' which uses the reservations when querying 
+* A project 'b' which uses the on-demand model when querying
 
 ```
 ADMIN_PROJECT_ID=<project-id>
