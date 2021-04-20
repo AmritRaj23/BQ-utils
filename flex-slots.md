@@ -118,17 +118,17 @@ LATEST_ASSIGNMENT_ID=$(bq ls --project_id=$ADMIN_PROJECT_ID --location=$LOCATION
 Remove reservation from project 
 ```
 bq rm \
---project_id=ADMIN_PROJECT_ID \
---location=LOCATION \
---reservation_assignment ASSIGNMENT_ID
+--project_id=$ADMIN_PROJECT_ID \
+--location=$LOCATION \
+--reservation_assignment $ASSIGNMENT_ID
 ```
 
 Delete the reservation 
 ```
 bq rm \
---project_id=ADMIN_PROJECT_ID \
-  --location=LOCATION \
-  --reservation $RESERVATION_NAME
+--project_id=$ADMIN_PROJECT_ID \
+--location=$LOCATION \
+--reservation $RESERVATION_NAME
 ```
 
 ## Resources
