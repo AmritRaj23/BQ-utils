@@ -78,6 +78,8 @@ bq show \
   -j $LATEST_JOB_ID  
 ```
 
+## Query via on-demand project  
+
 Change Project origin to on demand 
 
 ```
