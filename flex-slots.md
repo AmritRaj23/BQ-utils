@@ -123,7 +123,7 @@ Remove reservation from project
 bq rm \
 --project_id=$ADMIN_PROJECT_ID \
 --location=$LOCATION \
---reservation_assignment $ASSIGNMENT_ID
+--reservation_assignment $LATEST_ASSIGNMENT_ID
 ```
 
 Delete the reservation 
@@ -132,6 +132,19 @@ bq rm \
 --project_id=$ADMIN_PROJECT_ID \
 --location=$LOCATION \
 --reservation $RESERVATION_NAME
+```
+
+Get latest commitment id 
+```
+LATEST_COMMITMENT_ID=$(bq ls --project_id=$ADMIN_PROJECT_ID --location=$LOCATION --capacity_commitment | awk '{if(NR>2)print}' | awk '{print $1}')
+```
+
+Delete the flex slots commitment 
+```
+bq rm \
+--project_id=$ADMIN_PROJECT_ID \
+--location=$LOCATION \
+--capacity_commitment $LATEST_COMMITMENT_ID
 ```
 
 ## Resources
